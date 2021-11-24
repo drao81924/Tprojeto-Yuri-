@@ -18,6 +18,7 @@ class pessoa{
     private $telefone;
     private $email;
     private $endereco;
+    
 
     public function pessoa() {
         

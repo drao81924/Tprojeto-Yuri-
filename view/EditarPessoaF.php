@@ -22,13 +22,14 @@ $pessoaF = $cadPfs->getPessoaFById($idPessoa);
         <h1>Editar Pessoa Física</h1>
         <br><br>
         <form action="<?php $cadPfs->updatePessoaF(); ?>" method="POST">
+            <input value="<?php echo $pessoaF[0]['idPessoa']; ?>"  type="hidden" name="idPessoa"/>
             <input value="<?php echo $pessoaF[0]['nome']; ?>" type="text" required name="nome"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['nome']; ?>" required type="tel" name="tel"/>
+            <input value="<?php echo $pessoaF[0]['telefone']; ?>" required type="tel" name="tel"/>
             <br><br>
             <input value="<?php echo $pessoaF[0]['email']; ?>" required type="email" name="email"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['email']; ?>" required type="text" name="endereco"/>
+            <input value="<?php echo $pessoaF[0]['endereco']; ?>" required type="text" name="endereco"/>
             <br><br>
             <input placeholder="<?php echo $pessoaF[0]['cpf']; ?>" required type="number" name="cpf"/>
             <br><br>

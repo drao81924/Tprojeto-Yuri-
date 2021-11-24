@@ -13,7 +13,7 @@
  */
 require_once 'pessoa.php';
 
-class pessoaJ extends pessoa{
+class pessoaJ extends pessoa {
     //put your code here
     
     private $cnpj;
