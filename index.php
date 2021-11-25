@@ -23,7 +23,7 @@ and open the template in the editor.
         <table><!--Cria Tabela -->
             <tr> <!--Cria linha -->
                 <td> <!--Cria Coluna -->
-                    <?php show('gerPesFisica','Ger. Pessoa Fisíca');?> | 
+                    <?php show('gerPesFisica','Ger. Pessoa Fisíca');?> |
                 </td>
                 <td>
                     <?php show('gerPesJuridica','Ger. Pessoa Jurídica');?>

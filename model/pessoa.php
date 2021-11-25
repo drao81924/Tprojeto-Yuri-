@@ -9,7 +9,7 @@
 /**
  * Description of pessoa
  *
- * @author jairb
+ * @author yuri
  */
 class pessoa{
 

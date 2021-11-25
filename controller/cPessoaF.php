@@ -9,7 +9,7 @@
 /**
  * Description of cPessoaF
  *
- * @author jairb
+ * @author yuri
  */
 require_once '../model/pessoaF.php';
 

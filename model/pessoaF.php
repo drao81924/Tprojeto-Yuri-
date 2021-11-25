@@ -9,7 +9,7 @@
 /**
  * Description of pessoaF
  *
- * @author jairb
+ * @author yuri
  */
 require_once 'pessoa.php';
 

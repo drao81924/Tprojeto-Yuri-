@@ -12,6 +12,24 @@ and open the template in the editor.
     <body>
         <h1>Ger. Pessoa Jurídica</h1>
         <a href="../index.php">Voltar</a>
+        <br><br>
+        <form action="<?php $gerPJ->salvarBD(); ?>" method="POST">
+            <input placeholder="Nome aqui ..." type="text" required name="nome"/>
+            <br><br>
+            <input placeholder="Telefone aqui ..." type="tel" name="tel"/>
+            <br><br>
+            <input placeholder="E-mail aqui ..." type="email" name="email"/>
+            <br><br>
+            <input placeholder="Endereço aqui ..." type="text" name="endereco"/>
+            <br><br>
+            <input placeholder="CNPJ aqui ..." type="number" name="cnpj"/>
+            <br><br>
+            <input placeholder="Nome Fantasia aqui ..." type="text" name="nomeFantasia"/>
+            <br><br>
+            <input type="submit" value="Salvar" name="salvarPJ" />
+            <input type="reset" value="Limpar" name="limpar" />
+        </form>
+        <br><br>
         <?php
         // put your code here
         ?>
