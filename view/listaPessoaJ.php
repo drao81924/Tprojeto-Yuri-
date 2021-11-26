@@ -4,6 +4,12 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+require_once '../controller/cPessoaJ.php';
+$pjs = $_REQUEST['listaPessoasJ'];
+$pjsBd = $_REQUEST['pessoasPJBD'];
+$pjbd = new cPessoaJ();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -33,13 +39,13 @@ and open the template in the editor.
                         <td><?php echo $pj["email"]; ?> </td>
                         <td><?php echo $pj["cnpj"]; ?> </td>
                         <td>
-                            <form action="EditarPessoaJ.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo $pj["idPessoa"]; ?>"/>
-                                <input type="submit" name="update" value="Editar"/>
-                            </form>
                             <form action="editarPessoaJ.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $pj["idPessoa"]; ?>"/>
                                 <input type="submit" name="update" value="Editar"/>
+                            </form>
+                            <form action="<?php $pjbd->deletarPessoaBD() ?>" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $pj["idPessoa"]; ?>"/>
+                                <input type="submit" name="delete" value="Deletar"/>
                             </form>
                         </td>
                     </tr>

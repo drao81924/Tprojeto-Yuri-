@@ -159,12 +159,12 @@ class cPessoaF {
         $schema = 'inf4t211';
         $conexao = mysqli_connect($bdHost, $bdUser, $bdPass, $schema);
 
-        if (!conexao) {
+        if (!$conexao) {
             die('sem conexao: ' . mysqli_error());
         }
         $sql = "select * from pessoa where idPessoa = $id";
         $pfsBD = [];
-
+        $result = mysqli_query($conexao, $sql);
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 array_push($pfsBD, $row);
@@ -174,7 +174,7 @@ class cPessoaF {
         mysqli_close($conexao);
     }
 
-    public function updatePessoaF($id) {
+    public function updatePessoaF() {
         if (isset($_POST['updatePF'])) {
             $bdHost = 'localhost';
             $bdUser = 'root';
@@ -195,10 +195,13 @@ class cPessoaF {
                     . "`email`='$getEmail',`endereco`='$getEndereco',`cpf`='$getCpf',"
                     . "`sexo`='$getSexo' WHERE `idPessoa`='$getIdPessoa'";
             $result = mysqli_query($conexao, $sql);
-            if (!result) {
+            if (!$result) {
                 die('Erro ao atualizar: ' . mysqli_error($conexao));
-                mysqli_close($conexao);
             }
+            mysqli_close($conexao);
+            
+            header('Location: gerPesFisica.php');
+
         }
     }
 

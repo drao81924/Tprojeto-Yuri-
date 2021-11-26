@@ -4,6 +4,10 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+require_once '../controller/cPessoaJ.php';
+$gerPJ = new cPessoaJ();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -31,7 +35,7 @@ and open the template in the editor.
         </form>
         <br><br>
         <?php
-        // put your code here
+        $gerPJ->getAll();
         ?>
     </body>
 </html>

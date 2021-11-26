@@ -12,6 +12,7 @@ if (isset($_POST['update'])) {
 }
 $cadPfs = new cPessoaF();
 $pessoaF = $cadPfs->getPessoaFById($idPessoa);
+
 ?>
 <html>
     <head>
@@ -25,13 +26,13 @@ $pessoaF = $cadPfs->getPessoaFById($idPessoa);
             <input value="<?php echo $pessoaF[0]['idPessoa']; ?>"  type="hidden" name="idPessoa"/>
             <input value="<?php echo $pessoaF[0]['nome']; ?>" type="text" required name="nome"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['telefone']; ?>" required type="tel" name="tel"/>
+            <input value="<?php echo $pessoaF[0]['telefone']; ?>" type="tel" name="tel"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['email']; ?>" required type="email" name="email"/>
+            <input value="<?php echo $pessoaF[0]['email']; ?>" type="email" name="email"/>
             <br><br>
-            <input value="<?php echo $pessoaF[0]['endereco']; ?>" required type="text" name="endereco"/>
+            <input value="<?php echo $pessoaF[0]['endereco']; ?>" type="text" name="endereco"/>
             <br><br>
-            <input placeholder="<?php echo $pessoaF[0]['cpf']; ?>" required type="number" name="cpf"/>
+            <input value="<?php echo $pessoaF[0]['cpf']; ?>" type="number" name="cpf"/>
             <br><br>
             <input type="radio" <?php if($pessoaF[0]['sexo']=="F"){echo "checked";} ?> value="F" name="sexo"/>Feminino
             <input type="radio" <?php if($pessoaF[0]['sexo']=="M"){echo "checked";} ?> value="M" name="sexo"/>Masculino

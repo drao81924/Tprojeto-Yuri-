@@ -5,7 +5,6 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-// put your code here
 require_once '../controller/cPessoaF.php';
 $gerPF = new cPessoaF();
 ?>
