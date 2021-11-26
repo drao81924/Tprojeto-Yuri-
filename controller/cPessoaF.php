@@ -114,7 +114,7 @@ class cPessoaF {
             die('Sem conexão: ' . mysqli_error());
         }
 
-        $sql = "select * from pessoa";
+        $sql = "select * from pessoa where cnpj is null";
         $result = mysqli_query($conexao, $sql);
         $pfsBD = [];
         if ($result) {
@@ -202,6 +202,9 @@ class cPessoaF {
             
             header('Location: gerPesFisica.php');
 
+        }
+        if(isset($_POST['cancelar'])){
+            header('Location: gerPesFisica.php');
         }
     }
 

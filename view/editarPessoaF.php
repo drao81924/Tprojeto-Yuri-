@@ -38,7 +38,7 @@ $pessoaF = $cadPfs->getPessoaFById($idPessoa);
             <input type="radio" <?php if($pessoaF[0]['sexo']=="M"){echo "checked";} ?> value="M" name="sexo"/>Masculino
             <br><br>
             <input type="submit" value="Salvar" name="updatePF" />
-            <input type="submit" value="Cancelar" name="cancelarUp" />
+            <input type="submit" value="Cancelar" name="cancelar" />
         </form>
         <?php
         // put your code here

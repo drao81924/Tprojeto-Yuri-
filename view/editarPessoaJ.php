@@ -7,11 +7,12 @@ and open the template in the editor.
 <?php
 require_once '../controller/cPessoaJ.php';
 $idPessoa = 0;
-if (isset($_POST['update'])){
+if (isset($_POST['update'])) {
     $idPessoa = $_POST['id'];
 }
 $cadPjs = new cPessoaJ();
 $pessoaJ = $cadPjs->getPessoaJById($idPessoa);
+
 ?>
 <html>
     <head>
@@ -33,10 +34,10 @@ $pessoaJ = $cadPjs->getPessoaJById($idPessoa);
             <br><br>
             <input value="<?php echo $pessoaJ[0]['cnpj']; ?>" type="number" name="cnpj"/>
             <br><br>
-            <input value=" <?php echo $pessoaJ[0]['nomeFantasia']; ?>" type="text" name="nomeFantasia"/>
+            <input value="<?php echo $pessoaJ[0]['nomeFantasia']; ?>" type="text" name="nomeFantasia"/>
             <br><br>
             <input type="submit" value="Salvar" name="updatePJ" />
-            <input type="submit" value="Cancelar" name="cancelarUp" />
+            <input type="submit" value="Cancelar" name="cancelar" />
         </form>
         <?php
         // put your code here

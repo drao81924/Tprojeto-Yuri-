@@ -86,7 +86,7 @@ class cPessoaJ {
             $getTelefone = $_POST['tel'];
             $getEmail = $_POST['email'];
             $getEndereco = $_POST['endereco'];
-            $getCnpj = $_POST['ccnpj'];
+            $getCnpj = $_POST['cnpj'];
             $getNomeFantasia = $_POST['nomeFantasia'];
             $sql = "insert into `pessoa` (`nome`,`telefone`,`email`,`endereco`,"
                     . "`cnpj`,`nomeFantasia`) values ('$getNome','$getTelefone',"
@@ -113,7 +113,7 @@ class cPessoaJ {
             die('Sem conexão: ' . mysqli_error());
         }
 
-        $sql = "select * from pessoa";
+        $sql = "select * from pessoa where cpf is null";
         $result = mysqli_query($conexao, $sql);
         $pjsBD = [];
         if ($result) {
@@ -162,6 +162,7 @@ class cPessoaJ {
         }
         $sql = "select * from pessoa where idPessoa = $id";
         $pjsBD = [];
+        $result = mysqli_query($conexao, $sql);
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 array_push($pjsBD, $row);
@@ -196,7 +197,10 @@ class cPessoaJ {
                 die('Erro ao atualizar: ' . mysqli_error($conexao));
             }
             mysqli_close($conexao);
-            header('Location: gerPesFisica.php');
+            header('Location: gerPesJuridica.php');
+        }
+        if(isset($_POST['cancelar'])){
+            header('Location: gerPesJuridica.php');
         }
     }
 
